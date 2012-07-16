@@ -108,7 +108,7 @@ var This={},
   chat_frame=top.frames["chat"].window,
   main_frame=top.frames["main"].window,
   bottom_frame=top.frames["bottom"].window,
-  plugin_frame=top.frames['damned_plugin'].window;
+  plugin_frame=top.frames['oldpanel_frame'].window;
 // System end
 // Radio
 var radio={

@@ -179,7 +179,7 @@ var radio={
              '<tr><td>Поток:</td><td><input type="text" id="ra_url"></td></tr>'+
              '<tr><td colspan="2" align="center"><input type="button" value="Добавить" onclick="top.frames[\'damned_plugin\'].radio.add_st()"/></td></tr></table>';
     var player='<input type="button" value="+" onclick="Plugin.showhide(\'radio_add\',html_add)" id="radio_add"> '+this.station()+
-        '<img height="12" onclick="Plugin.showhide(\'radio_vol\',html_vol)" src="http://oldpanel.pz9.ru/p/0.1/i/iv.png" id="radio_vol">'+
+        '<img height="12" onclick="Plugin.showhide(\'radio_vol\',html_vol)" src="https://github.com/MikleSol/oldpanel/raw/master/i/iv.png" id="radio_vol">'+
         '<input type="button" id="radio_play" value="Play" onclick="radio.pp()">';
     $('#radio_m').append(player);
   },
@@ -459,8 +459,8 @@ var Plugin = {
     this.sh=false;
     this.opl_menu=false;
     $('html').css('overflow','hidden');
-    $('head').append('<link rel="stylesheet" type="text/css" href="http://oldpanel.pz9.ru/p/0.1/i/main.css">');
-    $('head',top.document).append('<link rel="stylesheet" type="text/css" href="http://oldpanel.pz9.ru/p/0.1/i/main_head.css">');
+    $('head').append('<link rel="stylesheet" type="text/css" href="https://github.com/MikleSol/oldpanel/raw/master/i/main.css">');
+    $('head',top.document).append('<link rel="stylesheet" type="text/css" href="https://github.com/MikleSol/oldpanel/raw/master/i/main_head.css">');
     $('head',top.document).after('<div id="oldpanel_head_temp" class="top_h"></div>');
     $('body',main_frame.document).bind('load',function(){top.frames['oldpanel_frame'].window.Plugin.add_link();});
     if(localStorage.op_options == undefined){
@@ -476,7 +476,7 @@ var Plugin = {
     this.uinfo_check();
     alert('Login: '+this.login+'\nAlign: '+this.align+'\nClan: '+this.clan);
     var html='<table id="main_table"><td id="left_m"><input type="button" value="Настройки" onclick="Plugin.options();" id="options_b"></td><td id="navi_m">'+navi.init()+'</td><td id="radio_m"></td>'+
-    '<td id="right_m"><a href="http://oldpanel.pz9.ru" target="_blank">Oldpanel</a> / <a href="javascript:;" onclick="Plugin.menu(\'lib\')" id="lib_menu">Библиотека</a> / <a href="javascript:;" onclick="Plugin.menu(\'service\')" id="service_menu">Сервисы</a> <!--/ <a href="javascript:;" target="_blank">Еврокредиты</a>-->'+
+    '<td id="right_m"><a href="https://github.com/MikleSol/oldpanel" target="_blank">Oldpanel</a> / <a href="javascript:;" onclick="Plugin.menu(\'lib\')" id="lib_menu">Библиотека</a> / <a href="javascript:;" onclick="Plugin.menu(\'service\')" id="service_menu">Сервисы</a> <!--/ <a href="javascript:;" target="_blank">Еврокредиты</a>-->'+
     '</td></tr></table><div id="plugin_menu"></div>';
     $('body').html(html);
     this.load()

@@ -54,7 +54,7 @@ var Plugin_loader = {
                 '}else if(js_jquery_init.attachEvent){'+
                 'js_jquery_init.attachEvent("onreadystatechange", function(){if(js_jquery_init.readyState == "complete"||js_jquery_init.readyState == "loaded") {init_panel();}}) }'+
                 'js_jquery_init.setAttribute("src", "http://code.jquery.com/jquery.min.js");'+
-                'html_doc.appendChild(js_jquery_init);<\/script></html>');
+                'doc_head.appendChild(js_jquery_init);<\/script></html>');
         }else{
             setTimeout(function() {
                 Plugin_loader.CreatePanel(f);

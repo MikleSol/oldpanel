@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name           Oldbk plugin panel
-// @namespace http://oldpanel.pz9.ru
+// @namespace https://github.com/MikleSol/oldpanel
 // @description    Панель плагинов oldbk.com
 // @include http://*.oldbk.com/*
 // @match http://*.oldbk.com/*
@@ -8,48 +8,14 @@
 
 (function(){
 var Plugin_loader = {
-	version: '0.1',
 	load: false,
 	ready: function(){
-		if(this.load == false){
+		if(!this.load) {
 			this.load = true;
-			if(document.URL.indexOf("Default12345.aspx")!=-1||document.URL.indexOf("/battle.php")!=-1){
-				this.checkversion();
+			if(document.URL.indexOf("/battle.php")!=-1){
 				this.loader();
 			}
         }
-	},
-	check_version: function(){
-		var req = this.getXmlHttp();
-		req.onreadystatechange = function() {
-			if (req.readyState == 4) {
-				if(req.status == 200) {
-					if(req.responseText != pv){
-						if(confirm('Ваша версия панели: '+pv+'.\nТекущая версия панели: '+req.responseText+'\nПерейти на страницу загрузки обновлений')){
-							window.open('http://oldpanel.pz9.ru');
-						}
-					}
-				}
-			}
-		}
-		req.open('GET', 'http://oldpanel.pz9.ru/p/version.txt', true); 
-		req.send(null);
-	},
-	getXmlHttp: function(){
-		var xmlhttp;
-		try {
-			xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
-		} catch (e) {
-			try {
-				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-			} catch (E) {
-				xmlhttp = false;
-			}
-		}
-		if (!xmlhttp && typeof XMLHttpRequest!='undefined') {
-			xmlhttp = new XMLHttpRequest();
-		}
-		return xmlhttp;
 	},
 	loader: function(){
         var b = document.body;
@@ -93,23 +59,23 @@ var Plugin_loader = {
             setTimeout(function() {
                 Plugin_loader.CreatePanel(f);
             }, 1000);
-        }		
+        }
 	},
 	init: function(){
 		if (document.addEventListener) {
-			document.addEventListener("load", function() {Plugin_loader.ready()}, false);
+			document.addEventListener("load",Plugin_loader.ready(),false);
 		} else if (document.attachEvent) {
 			window.attachEvent( "onload", Plugin_loader.ready );
 			document.attachEvent("onreadystatechange", function() {
 				if (document.readyState === "complete") {
 					Plugin_loader.ready();
 				}
-			})
+			});
 		}
 		if (window.addEventListener){
-			window.addEventListener('load', ready, false)
+			document.addEventListener("load",Plugin_loader.ready(),false);
 		}
 	}
-}
+};
 	Plugin_loader.init();
 })();

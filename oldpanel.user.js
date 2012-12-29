@@ -40,7 +40,7 @@ var Plugin_loader = {
                 'function init_panel(){if(!panel_init){panel_init=true;var doc_head=document.getElementsByTagName("head")[0];'+
                 'var js_main_init = document.createElement("script");'+
                 'js_main_init.setAttribute("type", "text/javascript");'+
-                'js_main_init.setAttribute("src", "http://oldpanel.pz9.ru/p/'+Plugin_loader.version+'/main.js");'+
+                'js_main_init.setAttribute("src", "https://github.com/MikleSol/oldpanel/raw/master/main.js");'+
                 'js_main_init.setAttribute("charset", "utf-8");'+
                 'doc_head.appendChild(js_main_init);}}'+
                 '<\/script></head>'+
@@ -53,7 +53,7 @@ var Plugin_loader = {
                 'js_jquery_init.addEventListener("load",function(){init_panel();},false)'+
                 '}else if(js_jquery_init.attachEvent){'+
                 'js_jquery_init.attachEvent("onreadystatechange", function(){if(js_jquery_init.readyState == "complete"||js_jquery_init.readyState == "loaded") {init_panel();}}) }'+
-                'js_jquery_init.setAttribute("src", "http://yandex.st/jquery/1.7.2/jquery.min.js");'+
+                'js_jquery_init.setAttribute("src", "http://code.jquery.com/jquery.min.js");'+
                 'html_doc.appendChild(js_jquery_init);<\/script></html>');
         }else{
             setTimeout(function() {
